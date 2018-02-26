@@ -170,7 +170,6 @@ val defaultParadoxSettings: Seq[Setting[_]] = Seq(
 
 lazy val docs = project
   .enablePlugins(ParadoxPlugin, NoPublish)
-  .disablePlugins(BintrayPlugin)
   .settings(
     name := "Alpakka",
     inConfig(Compile)(defaultParadoxSettings),
@@ -190,7 +189,6 @@ lazy val docs = project
 
 lazy val `doc-examples` = project
   .enablePlugins(NoPublish, AutomateHeaderPlugin)
-  .disablePlugins(BintrayPlugin)
   .dependsOn(
     modules.map(p => classpathDependency(p)): _*
   )
